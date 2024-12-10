@@ -10,7 +10,7 @@ export const HomeView: React.FC = () => {
       initial={{ scale: 0, opacity: 0 }}
       transition={{ duration: 0.5 }}
       animate={{ scale: 1, opacity: 1 }}
-      className={`w-full h-[calc(100vh-100px)]`}
+      className={`w-full h-[calc(100dvh-100px)]`}
     >
       <div className="px-1 pb-5 h-full flex flex-col justify-between">
         <AboutUs />

@@ -36,10 +36,14 @@ export const MenuLinks: React.FC<IMenuLinksProps> = ({
             <div className="w-full h-[2px] bg-secondaryColor"></div>
             {links.map((link) => (
               <motion.a
-                whileTap={{scale: 0.8}}
+                whileTap={{ scale: 0.8 }}
                 onClick={handleCloseMenu}
                 className={`${
-                  hash === link.link ? "text-extras" : "text-secondaryColor"
+                  hash === link.link
+                    ? "text-extras"
+                    : !hash && link.name === "Inicio"
+                    ? "text-extras"
+                    : "text-secondaryColor"
                 }`}
                 href={link.link}
                 key={link.id}

@@ -9,28 +9,32 @@ export const Menu: React.FC = () => {
 
   return (
     <motion.div className="flex items-center gap-2">
-      <input
-        className="peer hidden"
-        type="checkbox"
-        name="checkMenu"
-        id="checkMenu"
-        defaultChecked={menu}
-      />
-      <label
+      <button
         onClick={handleToggleMenu}
-        className={`flex cursor-pointer w-8 h-8 justify-center items-center relative transition-all duration-300 after:content-[''] after:absolute after:w-8 after:h-[3px] after:rounded-sm after:bg-textAndIcons after:transition-all after:duration-300 after:translate-y-2 before:content-[''] before:absolute before:w-8 before:h-[3px] before:rounded-sm before:bg-textAndIcons before:transition-all before:duration-300  before:-translate-y-2 ${
-          menu &&
-          "after:-rotate-[45deg] after:-translate-y-0 before:rotate-[45deg] before:translate-y-0"
-        }`}
-        htmlFor="checkMenu"
+        className={`w-8 h-8 relative transition-all duration-1000 flex justify-center items-center z-10 
+                after:content-[''] after:rounded-md after:duration-500 after:bg-textAndIcons after:absolute after:w-8 after:h-[2px]
+                after:transition-all after:origin-center before:content-[''] before:absolute 
+                before:w-8 before:bg-textAndIcons before:rounded-md before:duration-500 before:h-[2px] before:transition-all before:origin-center 
+                ${
+                  menu
+                    ? "after:-rotate-45 after:translate-y-0 before:rotate-45 before:translate-y-0"
+                    : "after:translate-y-2 before:-translate-y-2"
+                }`}
       >
         <div
-          className={`w-8 h-[3px] rounded-sm bg-textAndIcons transition-all duration-300 ${
-            menu && "opacity-0"
-          }`}
+          className={`w-8 h-[2px] bg-textAndIcons rounded-md transition-all duration-300 
+                ${
+                  menu
+                    ? "origin-center -translate-x-[100px] bg-transparent"
+                    : ""
+                }`}
         ></div>
-      </label>
-      <Link onClick={handleCloseMenu} className="text-textAndIcons" href={`#top`}>
+      </button>
+      <Link
+        onClick={handleCloseMenu}
+        className="text-textAndIcons"
+        href={`#top`}
+      >
         Lautaro Gando
       </Link>
       <AnimatePresence>
