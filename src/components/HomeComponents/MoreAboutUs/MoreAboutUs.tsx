@@ -4,7 +4,7 @@ export const MoreAboutUs: React.FC = () => {
 
     return (
 
-        <div>
+        <div className="w-full min-h-[calc(100dvh-80px)] custom-bg-gradient">
             
         </div>
 

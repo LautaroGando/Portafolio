@@ -31,7 +31,7 @@ export const MenuLinks: React.FC<IMenuLinksProps> = ({
           }}
           className="w-full h-full fixed bg-primaryColor top-0 left-0 -z-10"
         >
-          <div className="flex flex-col items-center absolute w-full h-full justify-start gap-10 pt-[100px] text-2xl font-bold">
+          <div className="flex flex-col items-center absolute w-full h-full justify-start gap-10 py-[100px] overflow-auto text-xl font-bold">
             <FontAwesomeIcon className="text-secondaryColor" icon={faSun} />
             <div className="w-full h-[2px] bg-secondaryColor"></div>
             {links.map((link) => (

@@ -9,7 +9,7 @@ export const links: ILink[] = [
   {
     id: 2,
     name: "Sobre mí",
-    link: '#aboutus',
+    link: '#about-us',
   },
   {
     id: 3,

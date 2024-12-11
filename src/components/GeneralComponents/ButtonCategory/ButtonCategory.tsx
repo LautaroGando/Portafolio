@@ -10,7 +10,7 @@ export const ButtonCategory: React.FC<IButtonCategoryProps> = ({
 }: IButtonCategoryProps) => {
   return (
     <motion.a
-      className="flex flex-col text-textAndIcons items-center font-light text-xl cursor-pointer"
+      className="flex flex-col w-[300px] mx-auto text-textAndIcons items-center font-light text-xl cursor-pointer"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
     >

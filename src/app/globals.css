@@ -23,6 +23,7 @@
   background-size: cover;
   position: relative;
   z-index: 0;
+  height: 100dvh;
 
   &::before {
     content: "";
@@ -33,4 +34,8 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
   }
+}
+
+.custom-bg-gradient {
+  background: radial-gradient(50% 50% at 50% 50%, #181430 0%, #09041b 79.6%);
 }
