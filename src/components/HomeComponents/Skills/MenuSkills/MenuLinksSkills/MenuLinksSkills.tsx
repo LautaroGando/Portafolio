@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { useMenuSkills } from "@/context/MenuSkillsContext/MenuSkillsContext";
 
 export const MenuLinksSkills: React.FC = () => {
-  const { handleCloseMenuSkills } = useMenuSkills();
+  const { handleFilterSkills } = useMenuSkills();
 
   return (
     <div className="flex flex-col gap-2 items-start">
@@ -17,7 +17,7 @@ export const MenuLinksSkills: React.FC = () => {
           whileTap={{ scale: 0.95 }}
           className="text-textAndIcons w-44 text-left"
           key={linkSkill.id}
-          onClick={handleCloseMenuSkills}
+          onClick={() => handleFilterSkills(linkSkill.category)}
         >
           {linkSkill.name}
         </motion.button>

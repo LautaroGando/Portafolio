@@ -10,8 +10,8 @@ export const MenuSkills: React.FC = () => {
 
   return (
     <div
-      className={`h-full bg-backgroundPrimary flex flex-col gap-5 transition-all duration-500 pl-[9px] pt-[3px] overflow-hidden absolute ${
-        !menuSkills ? "w-[50px]" : "w-44"
+      className={`h-full z-10 bg-backgroundPrimary flex flex-col gap-5 transition-all duration-500 pl-[9px] pt-[3px] overflow-hidden absolute ${
+        !menuSkills ? "w-[50px]" : "w-48"
       }`}
     >
       <button
