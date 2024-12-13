@@ -21,9 +21,9 @@
   background-image: url("/assets/images/background.png");
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
   position: relative;
   z-index: 0;
-  height: 100dvh;
 
   &::before {
     content: "";
@@ -38,4 +38,26 @@
 
 .custom-bg-gradient {
   background: radial-gradient(50% 50% at 50% 50%, #181430 0%, #09041b 79.6%);
+}
+
+.custom-bg-more-about-us {
+  width: 600px;
+  height: 600px;
+  border: solid 16px #181430;
+  background-color: transparent;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.scrollY {
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: #181430;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #09041B;
+    border-radius: 10px;
+  }
 }
