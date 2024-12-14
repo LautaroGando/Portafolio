@@ -57,7 +57,15 @@
     background-color: #181430;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #09041B;
+    background-color: #09041b;
     border-radius: 10px;
   }
+}
+
+.container-input {
+  @apply flex flex-col gap-1 text-secondaryColor font-semibold transition-all focus-within:text-extras;
+}
+
+.input {
+  @apply outline-none p-3 bg-[#635D8480] border-b-2 text-secondaryColor border-secondaryColor transition-all focus:bg-[#A435F04C] focus:border-extras;
 }

@@ -42,7 +42,7 @@ export const ScrollAnimation: React.FC<IScrollAnimationProps> = ({
       ref={sectionRef}
       initial={{ opacity: 0, y: 100 }}
       animate={isVisible ? { opacity: 1, y: 0 } : {}}
-      transition={{ type: "spring", stiffness: 100, duration: 1 }}
+      transition={{ duration: 1 }}
       viewport={{ once: true }}
       onViewportEnter={() => setIsVisible(true)}
     >
