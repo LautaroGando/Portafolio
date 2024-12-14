@@ -15,8 +15,13 @@ export const TechnologySkills: React.FC = () => {
       <div className="w-full h-full flex flex-col items-center gap-5 py-5 overflow-y-auto scrollY">
         {filterSkills.length === 0
           ? skills.map((skill: ISkill) => (
-              <div
-                className="w-[180px] py-5 bg-backgroundPrimary text-primaryColor flex flex-col items-center justify-center gap-3 rounded-lg font-bold text-lg"
+              <motion.div
+                animate={{
+                  scale: [0.1, 1.05, 1],
+                  rotateY: [0, 360],
+                }}
+                transition={{ duration: 1.5, ease: "backInOut" }}
+                className="w-[180px] py-5 bg-backgroundPrimary text-primaryColor flex flex-col items-center justify-center gap-3 rounded-lg font-bold text-lg cursor-pointer"
                 key={skill.id}
               >
                 <Image
@@ -27,7 +32,7 @@ export const TechnologySkills: React.FC = () => {
                   height={95}
                 />
                 <h4>{skill.name}</h4>
-              </div>
+              </motion.div>
             ))
           : filterSkills.map((skill: ISkill) => (
               <motion.div
@@ -35,8 +40,8 @@ export const TechnologySkills: React.FC = () => {
                   scale: [0.1, 1.05, 1],
                   rotateY: [0, 360],
                 }}
-                transition={{ duration: 2, ease: "backInOut" }}
-                className="w-[180px] py-5 bg-backgroundPrimary text-primaryColor flex flex-col items-center justify-center gap-3 rounded-lg font-bold text-lg"
+                transition={{ duration: 1.5, ease: "backInOut" }}
+                className="w-[180px] py-5 bg-backgroundPrimary text-primaryColor flex flex-col items-center justify-center gap-3 rounded-lg font-bold text-lg cursor-pointer"
                 key={skill.id}
               >
                 <Image

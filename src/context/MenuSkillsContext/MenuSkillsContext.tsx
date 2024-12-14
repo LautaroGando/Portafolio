@@ -12,24 +12,34 @@ export const MenuSkillsProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [menuSkills, setMenuSkills] = useState<boolean>(false);
   const [filterSkills, setFilterSkills] = useState<ISkill[]>([]);
+  const [activeCategory, setActiveCategory] = useState<string>("all");
 
   const handleToggleMenuSkills = () => setMenuSkills(!menuSkills);
 
   const handleCloseMenuSkills = () => setMenuSkills(false);
 
   const handleFilterSkills = (category: string) => {
-
-    const filterSkills: ISkill[] = skills.filter((skill: ISkill) => category === 'all' ? skill : category === skill.category ? skill : null);
+    const filterSkills: ISkill[] = skills.filter((skill: ISkill) =>
+      category === "all" ? skill : category === skill.category ? skill : null
+    );
 
     setFilterSkills(filterSkills);
 
-    handleCloseMenuSkills();
+    setActiveCategory(category);
 
+    handleCloseMenuSkills();
   };
 
   return (
     <MenuSkillsContext.Provider
-      value={{ menuSkills, filterSkills, handleToggleMenuSkills, handleCloseMenuSkills, handleFilterSkills }}
+      value={{
+        menuSkills,
+        filterSkills,
+        activeCategory,
+        handleToggleMenuSkills,
+        handleCloseMenuSkills,
+        handleFilterSkills,
+      }}
     >
       {children}
     </MenuSkillsContext.Provider>

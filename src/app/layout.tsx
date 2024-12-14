@@ -21,7 +21,7 @@ export default function RootLayout({
         <html lang="es">
           <body className={`antialiased`}>
             <Header />
-            <main id="top" className="custom-bg pt-[100px]">
+            <main id="top" className="custom-bg pt-[100px] flex flex-col items-center">
               <div className="z-40">
                 {children}
                 <ButtonTop />
