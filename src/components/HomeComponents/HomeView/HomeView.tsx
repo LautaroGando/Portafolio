@@ -6,7 +6,6 @@ import ButtonCategory from "@/components/GeneralComponents/ButtonCategory/Button
 import MoreAboutUs from "../MoreAboutUs/MoreAboutUs";
 import Skills from "../Skills/Skills";
 import Projects from "../Projects/Projects";
-import ScrollAnimation from "@/components/GeneralComponents/ScrollAnimation/ScrollAnimation";
 import Contact from "../Contact/Contact";
 
 export const HomeView: React.FC = () => {
@@ -16,33 +15,31 @@ export const HomeView: React.FC = () => {
         initial={{ scale: 0, opacity: 0 }}
         transition={{ duration: 0.5 }}
         animate={{ scale: 1, opacity: 1 }}
-        className={`max-w-[400px] min-h-[calc(100dvh-100px)]`}
+        className={`max-w-[400px] min-h-[calc(100dvh-100px)] sm:max-w-[640px] lg:max-w-[1000px]`}
       >
-        <ScrollAnimation id="">
-          <div className="px-1 pb-5 min-h-[calc(100dvh-100px)] flex flex-col justify-between gap-10">
-            <AboutUs />
-            <ButtonCategory
-              category="MÁS SOBRE MÍ"
-              link="#about-us"
-              linkRef="about-us"
-            />
-          </div>
-        </ScrollAnimation>
+        <div className="px-1 pb-5 min-h-[calc(100dvh-100px)] flex flex-col justify-between scroll-animation relative lg:justify-center">
+          <AboutUs />
+          <ButtonCategory
+            category="MÁS SOBRE MÍ"
+            link="#about-us"
+            linkRef="about-us"
+          />
+        </div>
       </motion.div>
-      <div className="custom-bg-gradient w-[100vw] flex justify-center">
-        <div className="max-w-[400px]">
-          <ScrollAnimation id="about-us">
+      <div className="custom-bg-gradient w-full flex justify-center">
+        <div className="max-w-[400px] sm:max-w-[640px] lg:max-w-[1000px]">
+          <div className="scroll-animation">
             <MoreAboutUs />
-          </ScrollAnimation>
-          <ScrollAnimation id="skills">
+          </div>
+          <div className="scroll-animation">
             <Skills />
-          </ScrollAnimation>
-          <ScrollAnimation id="projects">
+          </div>
+          <div className="scroll-animation">
             <Projects />
-          </ScrollAnimation>
-          <ScrollAnimation id="contact">
+          </div>
+          <div className="scroll-animation">
             <Contact />
-          </ScrollAnimation>
+          </div>
         </div>
       </div>
     </div>

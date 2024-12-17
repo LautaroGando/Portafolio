@@ -4,8 +4,8 @@ import Info from "../Info/Info";
 
 export const Profile: React.FC = () => {
   return (
-    <div className="flex flex-col items-center gap-10">
-      <div className="w-[200px] h-[200px] bg-primaryColor rounded-full overflow-hidden flex justify-center items-center">
+    <div className="flex flex-col items-center gap-10 lg:flex-row-reverse">
+      <div className="w-[200px] h-[200px] bg-primaryColor rounded-full overflow-hidden flex justify-center items-center sm:w-[230px] sm:h-[230px]">
         <Image
           src="/assets/images/profile.png"
           alt="Imagen de perfil"

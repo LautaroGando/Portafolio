@@ -7,7 +7,7 @@ export const Section: React.FC<ISectionProps> = ({
   text,
 }: ISectionProps) => {
   return (
-    <div className="text-textAndIcons text-xl font-bold flex gap-2 z-10 items-center">
+    <div className="text-textAndIcons text-xl font-bold flex gap-2 z-10 items-center sm:text-3xl lg:text-4xl">
       {icon && <FontAwesomeIcon icon={icon} />}
       <h2>{text}</h2>
     </div>

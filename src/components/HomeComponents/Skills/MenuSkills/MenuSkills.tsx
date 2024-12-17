@@ -4,14 +4,16 @@ import { useMenuSkills } from "@/context/MenuSkillsContext/MenuSkillsContext";
 import React from "react";
 import MenuLinksSkills from "./MenuLinksSkills/MenuLinksSkills";
 import { AnimatePresence } from "motion/react";
+import { useSize } from "@/hooks/useSize";
 
 export const MenuSkills: React.FC = () => {
   const { menuSkills, handleToggleMenuSkills } = useMenuSkills();
+  const { size } = useSize();
 
   return (
     <div
       className={`h-full z-10 bg-backgroundPrimary flex flex-col gap-5 transition-all duration-500 pl-[9px] pt-[3px] overflow-hidden absolute ${
-        !menuSkills ? "w-[50px]" : "w-48"
+        !menuSkills ? "w-[50px] sm:w-[200px]" : "w-48"
       }`}
     >
       <button
@@ -24,7 +26,7 @@ export const MenuSkills: React.FC = () => {
                   menuSkills
                     ? "after:-rotate-45 after:translate-y-0 before:rotate-45 before:translate-y-0"
                     : "after:translate-y-2 before:-translate-y-2"
-                }`}
+                } sm:hidden`}
       >
         <div
           className={`w-8 h-[2px] bg-extras rounded-md transition-all duration-300 
@@ -32,6 +34,9 @@ export const MenuSkills: React.FC = () => {
         ></div>
       </button>
       <AnimatePresence>{menuSkills && <MenuLinksSkills />}</AnimatePresence>
+      <AnimatePresence>
+        {size && size > 640 && <MenuLinksSkills />}
+      </AnimatePresence>
     </div>
   );
 };

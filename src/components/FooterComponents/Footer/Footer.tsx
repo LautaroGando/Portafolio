@@ -7,7 +7,7 @@ import React from "react";
 export const Footer: React.FC = () => {
   return (
     <footer className="w-full flex flex-col gap-10 items-center">
-      <div className="text-textAndIcons text-3xl flex justify-between w-full">
+      <div className="text-textAndIcons text-3xl flex justify-between w-full sm:justify-evenly sm:text-4xl">
         <Link href="https://www.linkedin.com/in/lautaro-gando/" target="_blank">
           <FontAwesomeIcon icon={faLinkedin} />
         </Link>

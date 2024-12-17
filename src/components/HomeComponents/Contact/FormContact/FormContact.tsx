@@ -39,7 +39,15 @@ export const FormContact: React.FC = () => {
               name="message"
             />
           </div>
-          <motion.button whileTap={{scale: 0.9, backgroundColor: '#A435F0', color: '#FAFAFA'}} className="bg-backgroundSecondary h-[40px] mt-10 text-secondaryColor">
+          <motion.button
+            whileTap={{
+              scale: 0.9,
+              backgroundColor: "#A435F0",
+              color: "#FAFAFA",
+            }}
+            className="bg-backgroundSecondary h-[40px] mt-10 text-secondaryColor"
+            type="submit"
+          >
             ENVIAR
           </motion.button>
         </Form>

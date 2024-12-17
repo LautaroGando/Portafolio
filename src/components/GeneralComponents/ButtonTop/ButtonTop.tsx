@@ -12,7 +12,7 @@ export const ButtonTop: React.FC = () => {
       animate={{ scale: 1, opacity: 1 }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="fixed flex justify-center items-center cursor-pointer w-10 h-10 rounded-full bg-extras bottom-2 right-2 text-textAndIcons text-lg"
+      className="fixed flex justify-center items-center cursor-pointer w-10 h-10 rounded-full bg-extras bottom-2 right-2 text-textAndIcons text-lg sm:w-12 sm:h-12 sm:text-xl"
       href="#top"
     >
       <FontAwesomeIcon icon={faChevronUp} />

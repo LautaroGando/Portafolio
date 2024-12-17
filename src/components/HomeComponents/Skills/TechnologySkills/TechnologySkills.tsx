@@ -12,7 +12,7 @@ export const TechnologySkills: React.FC = () => {
   return (
     <div className="w-full h-[500px] bg-backgroundSecondary border-2 border-backgroundSecondary rounded-tl-md rounded-bl-md flex relative">
       <MenuSkills />
-      <div className="w-full h-full flex flex-col items-center gap-5 py-5 overflow-y-auto scrollY">
+      <div className="w-full h-full flex flex-col items-center gap-5 py-5 overflow-y-auto scrollY sm:items-end sm:pr-28">
         {filterSkills.length === 0
           ? skills.map((skill: ISkill) => (
               <motion.div

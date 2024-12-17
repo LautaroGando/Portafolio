@@ -69,3 +69,22 @@
 .input {
   @apply outline-none p-3 bg-[#635D8480] border-b-2 text-secondaryColor border-secondaryColor transition-all focus:bg-[#A435F04C] focus:border-extras;
 }
+
+.scroll-animation {
+  view-timeline-name: --reveal;
+  animation-name: show;
+  animation-fill-mode: both;
+  animation-timeline: --reveal;
+  animation-range: entry 25% cover 50%;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 10%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
