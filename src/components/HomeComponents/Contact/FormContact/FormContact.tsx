@@ -11,7 +11,7 @@ export const FormContact: React.FC = () => {
       onSubmit={() => {}}
     >
       {() => (
-        <Form className="flex flex-col gap-3">
+        <Form className="flex flex-col gap-3 lg:w-[800px]">
           <div className="container-input">
             <label htmlFor="name">Nombre:</label>
             <Field

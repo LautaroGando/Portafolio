@@ -10,9 +10,9 @@ export const TechnologySkills: React.FC = () => {
   const { filterSkills } = useMenuSkills();
 
   return (
-    <div className="w-full h-[500px] bg-backgroundSecondary border-2 border-backgroundSecondary rounded-tl-md rounded-bl-md flex relative">
+    <div className="w-full h-[500px] bg-backgroundSecondary border-2 border-backgroundSecondary rounded-tl-md rounded-bl-md flex relative lg:flex-col lg:bg-transparent lg:border-none">
       <MenuSkills />
-      <div className="w-full h-full flex flex-col items-center gap-5 py-5 overflow-y-auto scrollY sm:items-end sm:pr-28">
+      <div className="w-full h-full flex flex-col items-center gap-5 py-5 overflow-y-auto scrollY sm:items-end sm:pr-28 lg:pr-0 lg:flex-row lg:items-center lg:justify-center lg:flex-wrap">
         {filterSkills.length === 0
           ? skills.map((skill: ISkill) => (
               <motion.div

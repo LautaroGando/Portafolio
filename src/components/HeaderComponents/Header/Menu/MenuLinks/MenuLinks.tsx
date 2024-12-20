@@ -5,12 +5,14 @@ import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { IMenuLinksProps } from "./types";
 import { useSegment } from "@/hooks/useSegment";
 import { links } from "@/utils/links";
+import { ILink } from "@/interfaces/ILink";
 
 export const MenuLinks: React.FC<IMenuLinksProps> = ({
   menu,
   handleCloseMenu,
 }: IMenuLinksProps) => {
-  const { hash } = useSegment();
+  const sectionIds = links.map((link: ILink) => link.link.replace("#", ""));
+  const { hash } = useSegment(sectionIds);
 
   return (
     <>

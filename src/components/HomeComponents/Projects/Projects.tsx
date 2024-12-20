@@ -8,7 +8,7 @@ export const Projects: React.FC = () => {
   return (
     <div className="w-full min-h-[calc(100dvh-80px)] pt-5 px-2 flex flex-col justify-between pb-5 relative overflow-hidden gap-5">
       <Section icon={faListCheck} text="Mis proyectos" />
-      <div>
+      <div className="lg:border-[1px] lg:border-backgroundSecondary lg:p-2">
         <ProjectsList />
       </div>
       <ButtonCategory category="CONTACTO" link="#contact" linkRef="contact" />

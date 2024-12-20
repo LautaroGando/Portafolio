@@ -4,9 +4,11 @@ import { motion } from "motion/react";
 import { useSegment } from "@/hooks/useSegment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun } from "@fortawesome/free-solid-svg-icons";
+import { ILink } from "@/interfaces/ILink";
 
 export const NavLinks: React.FC = () => {
-  const { hash } = useSegment();
+  const sectionIds = links.map((link: ILink) => link.link.replace("#", ""));
+  const { hash } = useSegment(sectionIds);
 
   return (
     <div className="flex gap-3 items-center">

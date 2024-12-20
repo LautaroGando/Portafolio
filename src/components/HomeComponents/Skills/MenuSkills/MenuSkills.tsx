@@ -14,7 +14,7 @@ export const MenuSkills: React.FC = () => {
     <div
       className={`h-full z-10 bg-backgroundPrimary flex flex-col gap-5 transition-all duration-500 pl-[9px] pt-[3px] overflow-hidden absolute ${
         !menuSkills ? "w-[50px] sm:w-[200px]" : "w-48"
-      }`}
+      } lg:relative lg:w-full lg:bg-transparent lg:border-b-[1px] lg:border-extras lg:h-auto lg:pb-5`}
     >
       <button
         onClick={handleToggleMenuSkills}

@@ -2,18 +2,38 @@
 
 import { useEffect, useState } from "react";
 
-export const useSegment = () => {
+export const useSegment = (sectionIds: string[]) => {
   const [hash, setHash] = useState<string | null>(null);
 
   useEffect(() => {
-    setHash(window.location.hash);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-    const handleHashChange = () => setHash(window.location.hash);
+        if (visibleSection) {
+          setHash(`#${visibleSection.target.id}`);
+        }
+      },
+      {
+        threshold: 0.5,
+        rootMargin: "0px 0px -50% 0px",
+      }
+    );
 
-    window.addEventListener("hashchange", handleHashChange);
+    const sections = sectionIds.map((id) => document.getElementById(id));
 
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, []);
+    sections.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, [sectionIds]);
 
   return { hash };
 };

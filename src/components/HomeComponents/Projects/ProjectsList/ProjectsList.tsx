@@ -15,7 +15,7 @@ export const ProjectsList: React.FC = () => {
     <div className="flex flex-col gap-5">
       {projects.map((project: IProject) => (
         <div
-          className="text-textAndIcons flex flex-col items-center w-full md:flex-row"
+          className="text-textAndIcons flex flex-col items-center w-full md:flex-row lg:border-[1px] lg:border-secondaryColor lg:p-2"
           key={project.id}
         >
           <Link
@@ -37,12 +37,14 @@ export const ProjectsList: React.FC = () => {
               />
             </div>
           </Link>
-          <div className="bg-backgroundSecondary p-3 w-full flex flex-col gap-3 rounded-bl-md rounded-br-md md:rounded-tr-md md:rounded-bl-none">
-            <div className="flex flex-col gap-3">
-              <h2 className="text-lg font-bold sm:text-xl">{project.title}</h2>
-              <p className="text-sm font-light">
-                {project.description}
-              </p>
+          <div className="bg-backgroundSecondary p-3 w-full flex flex-col gap-3 rounded-bl-md rounded-br-md md:rounded-tr-md md:rounded-bl-none lg:flex-row lg:bg-transparent lg:justify-between lg:min-h-[250px] lg:py-0">
+            <div className="flex flex-col gap-3 lg:justify-between">
+              <div className="lg:flex lg:flex-col lg:gap-3">
+                <h2 className="text-lg font-bold sm:text-xl">
+                  {project.title}
+                </h2>
+                <p className="text-sm font-light">{project.description}</p>
+              </div>
               <div className="flex text-secondaryColor gap-1 flex-wrap text-sm">
                 {project.technologies.map((technologie, i) => (
                   <h3 key={technologie}>
@@ -52,7 +54,7 @@ export const ProjectsList: React.FC = () => {
                 ))}
               </div>
             </div>
-            <div className="self-end flex gap-3 text-3xl">
+            <div className="self-end flex gap-3 text-3xl lg:flex-col lg:self-start">
               <Link href={project.siteweb} target="_blank">
                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
               </Link>
