@@ -2,24 +2,23 @@
 import { Field, Form, Formik } from "formik";
 import React from "react";
 import { motion } from "motion/react";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 export const FormContact: React.FC = () => {
   return (
     <Formik
       initialValues={{ name: "", email: "", message: "" }}
       validate={() => {}}
-      onSubmit={async () => {
+      onSubmit={async (values) => {
         try {
-          await emailjs.sendForm(
-            'service_j3jw84h',
-            'template_y2vqfui',
-            '#form',
-            'lothqwnMtx2Q8yFmd'
-          );
-          alert('Mensaje enviado exitosamente');
+          await emailjs.send("service_j3jw84h", "template_y2vqfui", {
+            from_name: values.name,
+            from_email: values.email,
+            message: values.message,
+          }, "lothqwnMtx2Q8yFmd");
+          alert("Mensaje enviado exitosamente");
         } catch (error) {
-          console.error('Error al enviar el mensaje', error);
+          console.error("Error al enviar el mensaje", error);
         }
       }}
     >
