@@ -1,7 +1,7 @@
 "use client";
 import { useViewStore } from "@/store/ViewStore/useViewStore";
 import clsx from "clsx";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import { viewData } from "@/data/GeneralComponents/ViewData/view-data";
 import { IViewData } from "@/data/GeneralComponents/ViewData/types";
@@ -11,6 +11,7 @@ export const View: React.FC = () => {
   const { view, changeView } = useViewStore();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref);
+  const [isHovered, setIsHovered] = useState<number | null>(null);
 
   return (
     <div
@@ -22,11 +23,15 @@ export const View: React.FC = () => {
           initial={{ y: "200%", opacity: 0, scale: 0 }}
           animate={isInView && { y: "0%", opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: i / 5 }}
+          onMouseEnter={() => setIsHovered(i)}
+          onMouseLeave={() => setIsHovered(null)}
+          onTouchStart={() => setIsHovered(i)}
+          onTouchEnd={() => setIsHovered(null)}
           key={section.label}
           onClick={() =>
             changeView({ view: section.id, level: section.level } as TView)
           }
-          className="flex flex-col items-center gap-2 text-xs font-extra group text-secondary cursor-pointer"
+          className="flex flex-col items-center gap-2 text-xs font-extra text-secondary cursor-pointer"
         >
           <div
             className={clsx(
@@ -35,7 +40,8 @@ export const View: React.FC = () => {
                 ? "bg-primary w-[20px] h-[20px] border-secondary"
                 : "bg-secondary w-[10px] h-[10px]",
               view.view !== section.id &&
-                "group-hover:animate-spin group-hover:border-t-primary group-hover:scale-[1.5]"
+                isHovered === i &&
+                "animate-spin border-t-primary scale-[1.5]"
             )}
           ></div>
           {section.label}

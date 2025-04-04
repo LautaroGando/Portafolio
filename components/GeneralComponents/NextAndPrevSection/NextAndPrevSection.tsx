@@ -35,31 +35,52 @@ export const NextAndPrevSection: React.FC = () => {
         animate={isInView && { opacity: 1, scale: 1 }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onTouchStart={() => setIsHovered(true)}
+        onTouchEnd={() => setIsHovered(false)}
         transition={{ duration: 0.3 }}
-        className="flex items-center gap-2 group absolute bottom-3 right-3 z-50 hover:fixed hover:bottom-6 hover:right-6"
+        className={clsx(
+          "flex items-center gap-2 absolute bottom-3 right-3 z-50",
+          isHovered && "fixed bottom-6 right-6"
+        )}
       >
         \
-        <div className="fixed bottom-0 left-0 w-full h-0 bg-secondary z-10 transition-all duration-300 [clip-path:ellipse(100%_90%_at_50%_100%)] group-hover:h-[400px]"></div>
+        <div
+          className={clsx(
+            "fixed bottom-0 left-0 w-full h-0 bg-secondary transition-all duration-300 [clip-path:ellipse(100%_90%_at_50%_100%)]",
+            isHovered && "h-[400px]"
+          )}
+        ></div>
         {prev && (
           <button
             onClick={() =>
               changeView({ view: prev.id, level: prev.level } as TView)
             }
-            className="font-extra text-secondary flex items-center gap-2 transition-all duration-300 cursor-pointer z-50 active:scale-80 group-hover:text-primary"
+            className={clsx(
+              "font-extra flex items-center gap-2 transition-all duration-300 cursor-pointer z-50 active:scale-80",
+              isHovered ? "text-primary" : "text-secondary"
+            )}
           >
             <FontAwesomeIcon icon={faArrowLeft} />
             Nvl. {prev.level}
           </button>
         )}
         {prev && next && (
-          <div className="w-[10px] h-[2px] bg-secondary z-50 group-hover:bg-primary"></div>
+          <div
+            className={clsx(
+              "w-[10px] h-[2px] z-50",
+              isHovered ? "bg-primary" : "bg-secondary"
+            )}
+          ></div>
         )}
         {next && (
           <button
             onClick={() =>
               changeView({ view: next.id, level: next.level } as TView)
             }
-            className="font-extra text-secondary flex items-center gap-2 transition-all duration-300 z-50 cursor-pointer active:scale-80 group-hover:text-primary"
+            className={clsx(
+              "font-extra flex items-center gap-2 transition-all duration-300 z-50 cursor-pointer active:scale-80",
+              isHovered ? "text-primary" : "text-secondary"
+            )}
           >
             Nvl. {next.level}
             <FontAwesomeIcon icon={faArrowRight} />

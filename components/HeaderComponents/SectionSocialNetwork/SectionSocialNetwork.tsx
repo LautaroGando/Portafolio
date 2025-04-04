@@ -1,3 +1,4 @@
+import { Hoverable } from "@/components/GeneralComponents/Hoverable/Hoverable";
 import { socialData } from "@/data/HeaderComponents/SectionData/section-data";
 import { ISectionData } from "@/data/HeaderComponents/SectionData/types";
 import { useSectionStore } from "@/store/SectionStore/useSectionStore";
@@ -18,20 +19,30 @@ export const SectionSocialNetwork: React.FC = () => {
     >
       <div className="w-[80px] h-[5px] bg-extra"></div>
       {socialData.map((item: Omit<ISectionData, "id">, i: number) => (
-        <Link
-          key={i}
-          href={item.href}
-          target="_blank"
-          className="flex flex-col items-center relative group"
-        >
-          <FontAwesomeIcon
-            className="text-secondary text-[30px]"
-            icon={item.icon}
-            width={30}
-            height={30}
-          />
-          <h4 className="font-extra text-xs text-secondary absolute -bottom-5 opacity-0 transition-all duration-300 group-hover:opacity-100">{item.label}</h4>
-        </Link>
+        <Hoverable key={i}>
+          {(isHovered) => (
+            <Link
+              href={item.href}
+              target="_blank"
+              className="flex flex-col items-center relative"
+            >
+              <FontAwesomeIcon
+                className="text-secondary text-[30px]"
+                icon={item.icon}
+                width={30}
+                height={30}
+              />
+              <h4
+                className={clsx(
+                  "font-extra text-xs text-secondary absolute -bottom-5 transition-all duration-300",
+                  isHovered ? "opacity-100" : "opacity-0"
+                )}
+              >
+                {item.label}
+              </h4>
+            </Link>
+          )}
+        </Hoverable>
       ))}
     </div>
   );
