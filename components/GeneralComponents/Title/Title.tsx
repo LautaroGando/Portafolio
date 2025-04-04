@@ -1,0 +1,20 @@
+"use client";
+import React from "react";
+import { ITitleProps } from "./types";
+import { motion } from "motion/react";
+
+export const Title: React.FC<ITitleProps> = ({ level, title }: ITitleProps) => {
+  return (
+    <motion.div
+      initial={{ y: "100%", scale: 0.6, opacity: 0 }}
+      animate={{ y: "0%", scale: 1, opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      className="flex gap-3"
+    >
+      <h4 className="text-xs text-secondary font-extra">Nvl. {level}</h4>
+      <h1 className="text-5xl text-secondary font-title">{title}</h1>
+    </motion.div>
+  );
+};
+
+export default Title;
