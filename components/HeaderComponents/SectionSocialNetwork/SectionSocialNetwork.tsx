@@ -13,11 +13,13 @@ export const SectionSocialNetwork: React.FC = () => {
   return (
     <div
       className={clsx(
-        "items-center gap-1 flex transition-all h-full duration-700 overflow-hidden",
-        sectionSocial ? "w-[190px] opacity-100" : "w-0 opacity-0"
+        "items-center gap-1 flex transition-all h-[80px] duration-700 overflow-hidden xl:flex-col-reverse xl:fixed xl:bottom-3 xl:left-3 xl:h-full xl:gap-5",
+        sectionSocial
+          ? "w-[190px] opacity-100"
+          : "w-0 opacity-0 sm:w-[270px] sm:opacity-100 lg:w-[390px] xl:w-[100px]"
       )}
     >
-      <div className="w-[80px] h-[5px] bg-extra"></div>
+      <div className="w-[80px] h-[5px] bg-extra sm:w-[150px] lg:w-[250px] xl:w-[5px] xl:h-[200px]"></div>
       {socialData.map((item: Omit<ISectionData, "id">, i: number) => (
         <Hoverable key={i}>
           {(isHovered) => (
@@ -27,10 +29,10 @@ export const SectionSocialNetwork: React.FC = () => {
               className="flex flex-col items-center relative"
             >
               <FontAwesomeIcon
-                className="text-secondary text-[30px]"
+                className="text-secondary text-[30px] sm:text-[40px]"
                 icon={item.icon}
-                width={30}
-                height={30}
+                width={40}
+                height={40}
               />
               <h4
                 className={clsx(

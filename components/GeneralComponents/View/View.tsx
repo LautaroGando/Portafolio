@@ -16,7 +16,7 @@ export const View: React.FC = () => {
   return (
     <div
       ref={ref}
-      className="flex flex-col gap-4 self-start mt-20 py-3 h-[270px] overflow-hidden"
+      className="flex flex-col gap-4 self-start mt-20 py-3 h-[270px] overflow-hidden sm:flex-row sm:h-[150px] sm:w-full sm:justify-center lg:h-full lg:mt-0"
     >
       {viewData.map((section: IViewData, i: number) => (
         <motion.button
@@ -31,14 +31,14 @@ export const View: React.FC = () => {
           onClick={() =>
             changeView({ view: section.id, level: section.level } as TView)
           }
-          className="flex flex-col items-center gap-2 text-xs font-extra text-secondary cursor-pointer"
+          className="flex flex-col items-center gap-2 text-xs font-extra text-secondary cursor-pointer sm:text-sm"
         >
           <div
             className={clsx(
               "rounded-full border-[5px] transition-all duration-200",
               view.view === section.id
-                ? "bg-primary w-[20px] h-[20px] border-secondary"
-                : "bg-secondary w-[10px] h-[10px]",
+                ? "bg-primary w-[20px] h-[20px] border-secondary sm:w-[25px] sm:h-[25px]"
+                : "bg-secondary w-[10px] h-[10px] sm:w-[15px] sm:h-[15px]",
               view.view !== section.id &&
                 isHovered === i &&
                 "animate-spin border-t-primary scale-[1.5]"

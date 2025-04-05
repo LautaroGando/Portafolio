@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/HeaderComponents/Header";
 import View from "@/components/GeneralComponents/View/View";
 import NextAndPrevSection from "@/components/GeneralComponents/NextAndPrevSection/NextAndPrevSection";
+import Light from "@/components/GeneralComponents/Light/Light";
 
 export const metadata: Metadata = {
   title: "Portafolio - Lautaro Gando",
@@ -17,8 +18,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="antialiased w-full bg-background text-letter p-3 relative">
+        <Light />
         <Header />
-        {children}
+        <main className="mx-auto w-[95%] sm:w-[85%]">{children}</main>
         <div className="flex relative justify-between items-end">
           <View />
           <NextAndPrevSection />

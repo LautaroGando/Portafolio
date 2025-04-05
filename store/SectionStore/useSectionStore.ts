@@ -11,5 +11,6 @@ export const useSectionStore = create<ISectionStoreProps>((set) => ({
         ? { sectionSocial: !state.sectionSocial, sectionCV: false }
         : { sectionCV: !state.sectionCV, sectionSocial: false }
     ),
-  handleCloseSection: () => set(() => ({ sectionSocial: false })),
+  handleCloseSection: () =>
+    set(() => ({ sectionSocial: false, sectionCV: false })),
 }));
