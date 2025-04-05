@@ -41,14 +41,14 @@ export const NextAndPrevSection: React.FC = () => {
         className={clsx(
           "flex items-center gap-2 absolute bottom-3 right-3 z-50 sm:w-full sm:justify-center lg:w-max lg:justify-end",
           isHovered &&
-            "fixed bottom-6 right-6 sm:right-3 lg:right-6 lg:bottom-8"
+            "fixed bottom-6 right-6 sm:right-3 lg:right-6 lg:bottom-[24px]"
         )}
       >
         \
         <div
           className={clsx(
-            "fixed bottom-0 left-0 w-full h-0 bg-secondary transition-all duration-300 [clip-path:ellipse(100%_90%_at_50%_100%)] lg:[clip-path:ellipse(60%_85%_at_100%_100%)]",
-            isHovered && "h-[400px] lg:h-full"
+            "fixed bottom-0 left-0 w-full h-0 bg-secondary transition-all duration-300 [clip-path:ellipse(100%_90%_at_50%_100%)] lg:[clip-path:ellipse(20%_21%_at_100%_100%)]",
+            isHovered && "h-[200px] lg:h-full"
           )}
         ></div>
         {prev && (

@@ -20,7 +20,9 @@ export default function RootLayout({
       <body className="antialiased w-full bg-background text-letter p-3 relative">
         <Light />
         <Header />
-        <main className="mx-auto w-[95%] sm:w-[85%]">{children}</main>
+        <main className="mx-auto w-[95%] min-h-[calc(100dvh-181px)] sm:w-[85%]">
+          {children}
+        </main>
         <div className="flex relative justify-between items-end">
           <View />
           <NextAndPrevSection />
