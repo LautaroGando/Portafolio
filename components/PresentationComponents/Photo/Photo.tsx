@@ -10,7 +10,7 @@ export const Photo: React.FC = () => {
       initial={{ scale: 0.7, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="w-[200px] h-[200px] bg-tertiary rounded-full"
+      className="w-[200px] h-[200px] bg-transparent rounded-full"
     >
       <Image
         src={photo}

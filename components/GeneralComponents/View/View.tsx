@@ -16,7 +16,7 @@ export const View: React.FC = () => {
   return (
     <div
       ref={ref}
-      className="flex flex-col gap-4 self-start mt-20 py-3 h-[270px] overflow-hidden sm:flex-row sm:h-[150px] sm:w-full sm:justify-center lg:h-full lg:mt-0"
+      className="flex flex-col gap-4 self-start mt-10 py-3 h-[270px] overflow-hidden sm:flex-row sm:h-[150px] sm:w-full sm:justify-center lg:h-full lg:mt-0"
     >
       {viewData.map((section: IViewData, i: number) => (
         <motion.button

@@ -1,4 +1,5 @@
 export interface ITitleProps {
-    level: number;
-    title: string;
+  level: number;
+  title: string;
+  left?: boolean;
 }
