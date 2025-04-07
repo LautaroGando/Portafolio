@@ -3,7 +3,8 @@ import Presentation from "@/components/PresentationComponents/Presentation";
 import { useViewStore } from "@/store/ViewStore/useViewStore";
 import React from "react";
 import { AnimatePresence, motion } from "motion/react";
-import AboutUs from "@/components/GeneralComponents/AboutUsComponents/AboutUs";
+import AboutUs from "@/components/AboutUsComponents/AboutUs";
+import Skills from "@/components/SkillsComponents/Skills";
 
 const Home: React.FC = () => {
   const { view } = useViewStore();
@@ -26,6 +27,14 @@ const Home: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <AboutUs />
+          </motion.div>
+        ) : view.view === "skills" ? (
+          <motion.div
+            key={view.view}
+            exit={{ x: -500, opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Skills />
           </motion.div>
         ) : null}
       </AnimatePresence>

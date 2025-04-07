@@ -30,4 +30,13 @@
   .bg-background {
     background-image: url("/assets/images/background.svg");
   }
+  .scrollInvisible::-webkit-scrollbar {
+    width: 5px;
+  }
+  .scrollInvisible::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: #333333;
+    border-radius: 10px;
+    cursor: pointer;
+  }
 }

@@ -1,0 +1,10 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="9074062_nextjs_icon 2" clip-path="url(#clip0_17_218)">
+<path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M0 25C0 11.1929 11.1929 0 25 0C38.807 0 50 11.1929 50 25C50 33.6233 45.634 41.227 38.9917 45.721L16.3562 14.0314C15.9351 13.4418 15.1813 13.1919 14.4914 13.413C13.8014 13.6341 13.3333 14.2756 13.3333 15.0001V40H16.6667V20.2009L36.0997 47.407C32.7554 49.067 28.9867 50 25 50C11.1929 50 0 38.807 0 25ZM33.3333 33.3333V13.3333H36.6667V33.3333H33.3333Z" fill="#FAFAFA"/>
+</g>
+<defs>
+<clipPath id="clip0_17_218">
+<rect width="50" height="50" fill="white"/>
+</clipPath>
+</defs>
+</svg>

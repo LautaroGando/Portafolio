@@ -10,7 +10,7 @@ export const Light: React.FC = () => {
   return (
     <div
       className={clsx(
-        "fixed top-0 left-0 bg-black/90 w-full h-[100dvh] backdrop-grayscale-100 transition-all duration-500",
+        "fixed top-0 left-0 bg-black/90 w-full h-[100vh] backdrop-grayscale-100 transition-all duration-500",
         light ? "opacity-0 -z-100" : "opacity-100 z-100"
       )}
     >

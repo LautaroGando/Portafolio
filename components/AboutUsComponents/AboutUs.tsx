@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "../Title/Title";
+import Title from "../GeneralComponents/Title/Title";
 import Texts from "./Texts/Texts";
 
 export const AboutUs: React.FC = () => {

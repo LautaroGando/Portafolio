@@ -17,7 +17,7 @@ export const Section: React.FC = () => {
 
   useEffect(() => {
     if (size > 639) handleCloseSection();
-  }, [size]);
+  }, [size, handleCloseSection]);
 
   if (!isReady) return null;
 

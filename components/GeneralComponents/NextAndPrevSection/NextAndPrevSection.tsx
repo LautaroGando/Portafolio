@@ -25,7 +25,7 @@ export const NextAndPrevSection: React.FC = () => {
     <>
       <div
         className={clsx(
-          "fixed top-0 left-0 w-full h-[100dvh] bg-primary/90 opacity-0 transition-all duration-300 -z-10",
+          "fixed top-0 left-0 w-full h-[100vh] bg-primary/90 opacity-0 transition-all duration-300 -z-10",
           isHovered && "opacity-100 z-40"
         )}
       ></div>

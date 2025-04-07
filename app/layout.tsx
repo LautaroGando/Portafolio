@@ -17,10 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className="antialiased w-full bg-background text-letter p-3 relative">
+      <body className="antialiased w-full bg-background text-letter p-3 relative flex flex-col gap-5">
         <Light />
         <Header />
-        <main className="mx-auto w-[95%] min-h-[calc(100dvh-181px)] flex justify-center items-center font-letter sm:w-[85%]">
+        <main className="mx-auto w-[95%] min-h-[calc(100vh-221px)] flex justify-center items-center font-letter sm:w-[85%]">
           {children}
         </main>
         <div className="flex relative justify-between items-end">
