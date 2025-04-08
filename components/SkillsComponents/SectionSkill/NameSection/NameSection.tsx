@@ -18,7 +18,7 @@ export const NameSection: React.FC = () => {
   const next = nameData[currentIndex + 1];
 
   return (
-    <div className="flex items-center w-[80vw] justify-between overflow-hidden">
+    <div className="flex items-center w-[80vw] justify-between overflow-hidden lg:max-w-[700px]">
       <button
         onClick={() => {
           if (currentIndex <= 0) return null;
@@ -43,7 +43,7 @@ export const NameSection: React.FC = () => {
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: -100, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="text-secondary"
+          className="text-secondary sm:text-xl md:text-2xl"
         >
           {skill.skill}
         </motion.h2>

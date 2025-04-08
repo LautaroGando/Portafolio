@@ -24,8 +24,10 @@ export const SectionSkill: React.FC = () => {
       </motion.div>
       <div
         className={clsx(
-          "flex flex-col items-center gap-5 w-full min-h-[437px] max-h-[437px] py-3",
-          skill.id === 2 ? "overflow-auto scrollInvisible" : "overflow-hidden"
+          "grid grid-cols-1 place-items-center place-content-start gap-5 w-full max-w-[450px] min-h-[437px] max-h-[437px] py-3 md:max-w-[700px] lg:min-h-[300px] lg:max-h-[300px]",
+          skill.id === 2 ? "overflow-auto scrollInvisible" : "overflow-hidden",
+          filterSkills.length > 1 && "sm:grid-cols-2",
+          filterSkills.length > 3 && "md:grid-cols-4"
         )}
       >
         {filterSkills.map((sk: ISkill, i: number) => (
@@ -37,7 +39,11 @@ export const SectionSkill: React.FC = () => {
             transition={{ duration: 0.7, delay: i / 4, type: "spring" }}
             className="cursor-pointer"
           >
-            <SvgIcon initialColor="#FAFAFA" svgPath={sk.img} skillName={sk.skill} />
+            <SvgIcon
+              initialColor="#FAFAFA"
+              svgPath={sk.img}
+              skillName={sk.skill}
+            />
           </motion.button>
         ))}
       </div>
