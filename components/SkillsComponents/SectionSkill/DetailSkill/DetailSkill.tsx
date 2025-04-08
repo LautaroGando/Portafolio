@@ -44,7 +44,9 @@ export const DetailSkill: React.FC = () => {
                     duration={3}
                     delay={0.5}
                   />{" "}
-                  <span className="text-sm">años</span>
+                  <span className="text-sm">
+                    {detailSkill.experience === 1 ? "año" : "años"}
+                  </span>
                 </span>
               </h4>
             </div>

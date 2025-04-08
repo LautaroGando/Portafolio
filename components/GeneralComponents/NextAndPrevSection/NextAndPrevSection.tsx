@@ -53,9 +53,10 @@ export const NextAndPrevSection: React.FC = () => {
         ></div>
         {prev && (
           <button
-            onClick={() =>
-              changeView({ view: prev.id, level: prev.level } as TView)
-            }
+            onClick={() => {
+              changeView({ view: prev.id, level: prev.level } as TView);
+              setIsHovered(false);
+            }}
             className={clsx(
               "font-extra flex items-center gap-2 transition-all duration-300 cursor-pointer z-50 active:scale-80",
               isHovered ? "text-primary" : "text-secondary"
@@ -75,9 +76,10 @@ export const NextAndPrevSection: React.FC = () => {
         )}
         {next && (
           <button
-            onClick={() =>
-              changeView({ view: next.id, level: next.level } as TView)
-            }
+            onClick={() => {
+              changeView({ view: next.id, level: next.level } as TView);
+              setIsHovered(false);
+            }}
             className={clsx(
               "font-extra flex items-center gap-2 transition-all duration-300 z-50 cursor-pointer active:scale-80",
               isHovered ? "text-primary" : "text-secondary"
