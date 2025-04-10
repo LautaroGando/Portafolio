@@ -7,6 +7,7 @@ export const SvgIcon: React.FC<ISvgIconProps> = ({
   initialColor,
   svgPath,
   skillName,
+  size,
 }: ISvgIconProps) => {
   const { detailSkill } = useSkillStore();
 
@@ -23,7 +24,7 @@ export const SvgIcon: React.FC<ISvgIconProps> = ({
       preserveAspectRatio="xMidYMid meet"
       animate={{ fill: fillColor }}
       transition={{ duration: 0.5, ease: "backInOut" }}
-      className="w-[90px] h-[90px] sm:w-[100px] sm:h-[100px]"
+      className={`w-[${size[0]}px] h-[${size[0]}px] sm:w-[${size[1]}px] sm:h-[${size[1]}px]`}
     >
       <path d={svgPath} />
     </motion.svg>

@@ -6,7 +6,7 @@ import { ISkill } from "@/interfaces/ISkill";
 import { useSkillStore } from "@/store/SkillStore/useSkillStore";
 import clsx from "clsx";
 import DetailSkill from "./DetailSkill/DetailSkill";
-import SvgIcon from "@/components/ui/SkillsComponents/SvgIcon/SvgIcon";
+import SvgIcon from "@/components/ui/GeneralComponents/SvgIcon/SvgIcon";
 
 export const SectionSkill: React.FC = () => {
   const { skill, viewDetailSkill } = useSkillStore();
@@ -40,6 +40,7 @@ export const SectionSkill: React.FC = () => {
             className="cursor-pointer"
           >
             <SvgIcon
+              size={[90, 100]}
               initialColor="#FAFAFA"
               svgPath={sk.img}
               skillName={sk.skill}

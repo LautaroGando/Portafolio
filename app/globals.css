@@ -26,6 +26,12 @@
   --font-extra: "zCoolKuaile", sans-serif;
 }
 
+@layer components {
+  button {
+    cursor: pointer;
+  }
+}
+
 @layer utilities {
   .bg-background {
     background-image: url("/assets/images/background.svg");
@@ -38,5 +44,13 @@
     background-color: #333333;
     border-radius: 10px;
     cursor: pointer;
+  }
+
+  .btn-pagination {
+    @apply cursor-pointer flex justify-center items-center border border-transparent rounded-full w-[30px] h-[30px] transition-all duration-300 active:border-secondary disabled:text-secondary/50 sm:w-[35px] sm:h-[35px];
+  }
+
+  .icon-pagination {
+    @apply text-[20px] w-[20px] sm:text-[25px] sm:w-[25px]
   }
 }
