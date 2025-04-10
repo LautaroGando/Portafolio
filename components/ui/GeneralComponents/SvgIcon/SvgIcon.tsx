@@ -24,7 +24,7 @@ export const SvgIcon: React.FC<ISvgIconProps> = ({
       preserveAspectRatio="xMidYMid meet"
       animate={{ fill: fillColor }}
       transition={{ duration: 0.5, ease: "backInOut" }}
-      className={`w-[${size[0]}px] h-[${size[0]}px] sm:w-[${size[1]}px] sm:h-[${size[1]}px]`}
+      className={size}
     >
       <path d={svgPath} />
     </motion.svg>

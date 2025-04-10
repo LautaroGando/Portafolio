@@ -61,7 +61,7 @@ export const Technologies: React.FC = () => {
                   >
                     <SvgIcon
                       initialColor="#FAFAFA"
-                      size={[30]}
+                      size="w-[30px] h-[30px]"
                       skillName={tech.technology}
                       svgPath={tech.icon}
                     />

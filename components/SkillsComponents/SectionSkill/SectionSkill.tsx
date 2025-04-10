@@ -40,7 +40,7 @@ export const SectionSkill: React.FC = () => {
             className="cursor-pointer"
           >
             <SvgIcon
-              size={[90, 100]}
+              size="w-[90px] h-[90px] sm:w-[100px] sm:h-[100px]"
               initialColor="#FAFAFA"
               svgPath={sk.img}
               skillName={sk.skill}
