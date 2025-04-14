@@ -56,7 +56,7 @@ export const ProjectMap: React.FC = () => {
                   initial={{ opacity: 0, y: 100 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="w-full h-[140px] relative cursor-pointer sm:h-[200px] lg:h-[280px]"
+                  className="w-full h-[140px] relative sm:h-[200px] lg:h-[280px]"
                 >
                   <Image
                     className="w-full h-full"

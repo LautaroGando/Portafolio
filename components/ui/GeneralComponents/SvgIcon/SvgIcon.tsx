@@ -8,6 +8,7 @@ export const SvgIcon: React.FC<ISvgIconProps> = ({
   svgPath,
   skillName,
   size,
+  project,
 }: ISvgIconProps) => {
   const { detailSkill } = useSkillStore();
 
@@ -22,7 +23,7 @@ export const SvgIcon: React.FC<ISvgIconProps> = ({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid meet"
-      animate={{ fill: fillColor }}
+      animate={{ fill: project ? "#FAFAFA" : fillColor }}
       transition={{ duration: 0.5, ease: "backInOut" }}
       className={size}
     >

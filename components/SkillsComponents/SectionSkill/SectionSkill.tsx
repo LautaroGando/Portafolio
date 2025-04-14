@@ -25,7 +25,7 @@ export const SectionSkill: React.FC = () => {
       <div
         className={clsx(
           "grid grid-cols-1 place-items-center place-content-start gap-5 w-full max-w-[450px] min-h-[437px] max-h-[437px] py-3 md:max-w-[700px] lg:min-h-[300px] lg:max-h-[300px]",
-          skill.id === 2 ? "overflow-auto scrollInvisible" : "overflow-hidden",
+          skill.id === 2 ? "overflow-auto scroll" : "overflow-hidden",
           filterSkills.length > 1 && "sm:grid-cols-2",
           filterSkills.length > 3 && "md:grid-cols-4"
         )}

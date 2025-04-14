@@ -3,4 +3,5 @@ export interface ISvgIconProps {
   svgPath: string;
   skillName: string;
   size: string;
+  project?: boolean;
 }

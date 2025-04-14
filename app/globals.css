@@ -36,10 +36,10 @@
   .bg-background {
     background-image: url("/assets/images/background.svg");
   }
-  .scrollInvisible::-webkit-scrollbar {
+  .scroll::-webkit-scrollbar {
     width: 5px;
   }
-  .scrollInvisible::-webkit-scrollbar-thumb {
+  .scroll::-webkit-scrollbar-thumb {
     width: 5px;
     background-color: #333333;
     border-radius: 10px;
@@ -51,6 +51,10 @@
   }
 
   .icon-pagination {
-    @apply text-[20px] w-[20px] sm:text-[25px] sm:w-[25px]
+    @apply text-[20px] w-[20px] sm:text-[25px] sm:w-[25px];
+  }
+
+  .input-error {
+    @apply text-secondary absolute text-xs -bottom-6 sm:text-sm;
   }
 }

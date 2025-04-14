@@ -7,7 +7,11 @@ import Light from "@/components/GeneralComponents/Light/Light";
 
 export const metadata: Metadata = {
   title: "Lautaro Gando",
-  description: "",
+  description:
+    "Desarrollador web especializado en Next.js, TypeScript y Tailwind CSS. Creo interfaces modernas, optimizadas y escalables para proyectos frontend y fullstack.",
+  icons: {
+    icon: "/assets/icons/icon.png",
+  },
 };
 
 export default function RootLayout({

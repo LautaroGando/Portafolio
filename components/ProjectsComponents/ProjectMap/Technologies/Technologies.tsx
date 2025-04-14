@@ -64,6 +64,7 @@ export const Technologies: React.FC = () => {
                       size="w-[30px] h-[30px]"
                       skillName={tech.technology}
                       svgPath={tech.icon}
+                      project
                     />
                     <h6
                       className={clsx(

@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "motion/react";
 import AboutUs from "@/components/AboutUsComponents/AboutUs";
 import Skills from "@/components/SkillsComponents/Skills";
 import Projects from "@/components/ProjectsComponents/Projects";
+import Contact from "@/components/ContactComponents/Contact";
 
 const Home: React.FC = () => {
   const { view } = useViewStore();
@@ -45,7 +46,17 @@ const Home: React.FC = () => {
           >
             <Projects />
           </motion.div>
-        ) : null}
+        ) : (
+          view.view === "contact" && (
+            <motion.div
+              key={view.view}
+              exit={{ x: -500, opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Contact />
+            </motion.div>
+          )
+        )}
       </AnimatePresence>
     </div>
   );
