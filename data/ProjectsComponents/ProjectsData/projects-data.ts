@@ -55,8 +55,8 @@ export const projectsData: IProjectsData[] = [
   {
     id: 2,
     title: "GLU Logística",
-    urlGithub: "https://github.com/LautaroGando/La-Vuelta-Logistica",
-    href: "https://glulogistica.vercel.app/",
+    urlGithub: "https://github.com/LautaroGando/GLU-Logistica",
+    href: "https://www.glulogistica.com.ar/",
     img: "/assets/images/projects/glu-logistica.png",
     description:
       "Sitio web informativo con plataforma de gestión para una empresa de logística y distribución de paquetes. La aplicación cuenta con un panel administrativo donde se pueden controlar los usuarios registrados y gestionar el flujo de los envíos: desde el ingreso de paquetes en depósito, su salida a destino y su posterior entrega. Cada usuario cuenta con un panel privado donde puede consultar el estado actualizado de sus pedidos, permitiendo un seguimiento claro a lo largo del proceso logístico. El sistema está pensado para facilitar la organización interna y ofrecer a los clientes una experiencia transparente y accesible.",
